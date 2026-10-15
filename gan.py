@@ -11,7 +11,7 @@ Everything the project needs lives in this one file:
 Quick start (Google Colab):
 
     from gan import train_gan
-    train_gan(epochs=30)          # saves models/generator.pt
+    train_gan(epochs=100)          # saves models/generator.pt
 """
 from __future__ import annotations
 
@@ -155,7 +155,7 @@ def _save_generator(generator: Generator, path: Path, epochs_done: int) -> None:
 # Training
 # --------------------------------------------------------------------------- #
 def train_gan(
-    epochs: int = 30,
+    epochs: int = 100,
     batch_size: int = 128,
     lr: float = 2e-4,
     latent_dim: int = LATENT_DIM,
@@ -178,7 +178,7 @@ def train_gan(
 
     Parameters
     ----------
-    epochs : 30 epochs take only a few minutes on a free Colab GPU.
+    epochs : 100 epochs take only a few minutes on a free Colab GPU.
     dataset : optional. Any torch Dataset returning (image[1,28,28] in 0..1, label).
               Leave as None to download MNIST automatically.
 
